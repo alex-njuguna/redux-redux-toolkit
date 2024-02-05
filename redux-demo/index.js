@@ -1,3 +1,7 @@
+const redux = require('redux')
+const createStore = redux.createStore
+
+
 const CAKE_ORDERED = "CAKE_ORDERED";
 
 function orderCake() {
@@ -20,3 +24,4 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
