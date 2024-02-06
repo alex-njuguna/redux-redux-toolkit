@@ -53,10 +53,10 @@ export default function Slider() {
 
       <div>
         <button className="absolute top-[50%] bg-white right-4 rounded-full p-2 hover:bg-green-300" onClick={() => dispatch(nextSlide(sliderIndex + 1))}>
-        <i className="fa-solid fa-arrow-right fa-lg"></i>
+        <i className="fa-solid fa-arrow-right"></i>
         </button>
         <button className="absolute top-[50%] bg-white left-4 rounded-full p-2 hover:bg-green-300" onClick={() => dispatch(prevSlide(sliderIndex - 1))}>
-        <i className="fa-solid fa-arrow-left fa-lg"></i>
+        <i className="fa-solid fa-arrow-left"></i>
         </button>
       </div>
     </div>
