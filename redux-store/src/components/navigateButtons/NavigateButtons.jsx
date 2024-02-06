@@ -1,4 +1,5 @@
 import clothes from "../../assets/images/clothes.jpg";
+import { Button } from "@material-tailwind/react";
 
 export default function NavigateButtons() {
   const buttons = [
@@ -13,12 +14,19 @@ export default function NavigateButtons() {
   ];
   return (
     <div>
+      <div></div>
       <div className="flex items-center justify-center py-8">
         {buttons.map((button, index) => (
           <div key={index} className="mr-4">
-            <button className="bg-white text-dark px-2 py-2 font-bold outline  rounded hover:bg-gray-300 duration-300 ease-in-out">
+            <Button
+              color="gray"
+              size="lg"
+              variant="outlined"
+              ripple={true}
+              className="px-2 py-2 hover:bg-green-500 duration-500 ease-in-out"
+            >
               {button}
-            </button>
+            </Button>
           </div>
         ))}
       </div>
