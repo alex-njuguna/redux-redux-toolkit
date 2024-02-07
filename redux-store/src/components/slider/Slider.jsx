@@ -2,7 +2,7 @@ import {
   nextSlide,
   prevSlide,
   dotSlide,
-} from "../../features/slices/sliderSlice";
+} from "../../features/slices/SliderSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { sliderData } from "../../assets/data/dummyData";
 
