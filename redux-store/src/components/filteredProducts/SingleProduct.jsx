@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { Tooltip, Button } from "@material-tailwind/react";
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../../features/slices/CartSlice";
 
 export default function SingleProduct() {
   const product = useSelector((state) => state.products.singleProduct);
@@ -13,6 +16,8 @@ export default function SingleProduct() {
 
   const [size, setSize] = useState(productSize);
   const [color, setColor] = useState(productColor);
+
+  const dispatch = useDispatch()
 
   return (
     <div>
@@ -88,7 +93,15 @@ export default function SingleProduct() {
               </div>
               <div className="mt-3">
                 <Tooltip content="Add to Cart" placement="bottom">
-                  <Button>Add to cart</Button>
+                  <Button onClick={() => dispatch(addToCart({
+                    id: item.id,
+                    name: item.name,
+                    color: color,
+                    size: size,
+                    price: item.price,
+                    amount: 1,
+                    totalPrice: item.price
+                  }))}  > Add to cart</Button>
                 </Tooltip>
               </div>
             </div>
