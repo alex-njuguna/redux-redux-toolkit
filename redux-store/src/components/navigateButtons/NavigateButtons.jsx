@@ -31,7 +31,7 @@ export default function NavigateButtons() {
                 size="lg"
                 variant="outlined"
                 ripple={true}
-                className="px-2 py-2 hover:bg-green-500 duration-500 ease-in-out"
+                className="px-2 py-2 duration-500 ease-in-out"
                 onClick={() => dispatch(filterProducts(button))}
               >
                 {button}
@@ -41,8 +41,8 @@ export default function NavigateButtons() {
         ))}
       </div>
 
-      <div className="bg-green-300 p-2 w-[55%] mx-auto rounded-md">
-        <h3 className="text-orange-900 text-center font-bold tracking-normal leading-none text-lg">
+      <div className="bg-black p-2 w-[55%] mx-auto rounded-md">
+        <h3 className="text-red-900 text-center font-bold tracking-normal leading-none text-lg">
           SALES UP 50%
         </h3>
       </div>
