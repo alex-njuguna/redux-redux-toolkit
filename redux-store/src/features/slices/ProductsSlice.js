@@ -24,7 +24,7 @@ export const ProductsSlice = createSlice({
         console.log(error);
       }
     },
-    singleProduct(state, action) {
+    getSingleProduct(state, action) {
       try {
         const oneProduct = storeData.filter(
           (product) => product.id === action.payload
@@ -40,5 +40,5 @@ export const ProductsSlice = createSlice({
   },
 });
 
-export const { filterProducts, singleProduct } = ProductsSlice.actions;
+export const { filterProducts, getSingleProduct } = ProductsSlice.actions;
 export default ProductsSlice.reducer;
