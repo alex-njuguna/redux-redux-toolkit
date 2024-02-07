@@ -32,7 +32,6 @@ export const ProductsSlice = createSlice({
         state.singleProduct = oneProduct;
         const saveState = JSON.stringify(oneProduct);
         sessionStorage.setItem("oneProduct", saveState);
-        console.log(oneProduct);
       } catch (error) {
         console.log(error);
       }
