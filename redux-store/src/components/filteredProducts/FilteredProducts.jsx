@@ -19,15 +19,15 @@ export default function FilteredProducts() {
         <div className="grid grid-cols-4 justify-items-center py-8 gap-12">
           {products
             .filter((product) => product.type === type)
-            .map((eachProduct, index) => (
+            .map((product, index) => (
               <div key={index}>
                 <ProductCard
-                  id={eachProduct.id}
-                  name={eachProduct.name}
-                  text={eachProduct.text}
-                  img={eachProduct.img}
-                  price={eachProduct.price}
-                  colors={eachProduct.color}
+                  id={product.id}
+                  name={product.name}
+                  text={product.text}
+                  img={product.img}
+                  price={product.price}
+                  colors={product.color}
                 />
               </div>
             ))}
