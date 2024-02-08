@@ -9,6 +9,8 @@ import {
 import { Fragment, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { removeFromCart } from "../../features/slices/CartSlice";
+
 export default function Cart({ openModal, setOpen }) {
   const cart = useSelector((state) => state.cart.cart);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
@@ -73,6 +75,7 @@ export default function Cart({ openModal, setOpen }) {
                         placement="bottom"
                       >
                         <Button
+                          onClick={() => dispatch(removeFromCart(item))}
                           size="sm"
                           color="red"
                           variant="filled"
@@ -99,10 +102,6 @@ export default function Cart({ openModal, setOpen }) {
             className="border-0 outline-0"
             open={openModal}
             handler={() => setOpen(false)}
-            animate={{
-              mount: { scale: 1, y: 0 },
-              unmount: { scale: 0.9, y: -100 },
-            }}
           >
             <DialogHeader>Shopping Bag</DialogHeader>
             <DialogBody divider>

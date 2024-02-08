@@ -6,7 +6,6 @@ import Cart from "../cart/Cart";
 
 export default function Navbar() {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
-  const cart = useSelector((state) => state.cart.cart);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
 
@@ -35,7 +34,7 @@ export default function Navbar() {
           >
             {totalAmount > 0 ? (
               <span className="rounded-full bg-gray-300 px-2 text-sm mr-1">
-                {cart.length}
+                {totalAmount}
               </span>
             ) : (
               <i
