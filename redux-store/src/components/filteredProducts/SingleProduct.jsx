@@ -17,7 +17,7 @@ export default function SingleProduct() {
   const [size, setSize] = useState(productSize);
   const [color, setColor] = useState(productColor);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -93,15 +93,26 @@ export default function SingleProduct() {
               </div>
               <div className="mt-3">
                 <Tooltip content="Add to Cart" placement="bottom">
-                  <Button onClick={() => dispatch(addToCart({
-                    id: item.id,
-                    name: item.name,
-                    color: color,
-                    size: size,
-                    price: item.price,
-                    amount: 1,
-                    totalPrice: item.price
-                  }))}  > Add to cart</Button>
+                  <Button
+                    onClick={() =>
+                      dispatch(
+                        addToCart({
+                          id: item.id,
+                          name: item.name,
+                          img: item.img,
+                          text: item.text,
+                          color: color,
+                          size: size,
+                          price: item.price,
+                          amount: 1,
+                          totalPrice: item.price,
+                        })
+                      )
+                    }
+                  >
+                    {" "}
+                    Add to cart
+                  </Button>
                 </Tooltip>
               </div>
             </div>
