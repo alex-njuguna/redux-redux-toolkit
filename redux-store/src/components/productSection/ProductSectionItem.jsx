@@ -10,7 +10,7 @@ import { Button } from "@material-tailwind/react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/slices/CartSlice";
 
-const ProductSectionItem = ({
+export default function ProductSectionItem({
   id,
   img,
   name,
@@ -19,7 +19,7 @@ const ProductSectionItem = ({
   price,
   color,
   totalPrice,
-}) => {
+}) {
   const dispatch = useDispatch();
 
   const defaultSize = size[0];
@@ -90,6 +90,4 @@ const ProductSectionItem = ({
       </Card>
     </div>
   );
-};
-
-export default ProductSectionItem;
+}
