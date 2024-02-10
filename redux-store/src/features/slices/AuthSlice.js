@@ -12,8 +12,8 @@ export const authSlice = createSlice({
   reducers: {
     login(state, action) {
       const newUser = action.payload;
-      const userValidation = newUser
-      const passwordValidation = newUser.password
+      const userValidation = newUser;
+      const passwordValidation = newUser.password;
       state.user = newUser;
       if (!userValidation || !passwordValidation) {
         state.user = {
@@ -25,7 +25,7 @@ export const authSlice = createSlice({
         state.user.authUser = true;
         const saveState = JSON.stringify(newUser);
         sessionStorage.setItem("authUser", saveState);
-        console.log(newUser)
+        console.log(newUser);
       }
     },
 
