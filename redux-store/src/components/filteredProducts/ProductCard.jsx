@@ -22,7 +22,7 @@ export default function ProductCard({ id, name, text, img, price, colors }) {
     <Link to={`/filtered-products/${type}/${id}`}>
       <Card className="mt-6 w-96" onClick={handleClick}>
         <CardHeader color="blue-gray" className="relative h-96">
-          <img src={img} alt="card-image" />
+          <img src={img} alt="product" />
         </CardHeader>
         <CardBody>
           <Typography variant="h5" color="blue-gray" className="mb-2">

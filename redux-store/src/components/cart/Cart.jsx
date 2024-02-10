@@ -6,7 +6,7 @@ import {
   DialogFooter,
   Tooltip,
 } from "@material-tailwind/react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { removeFromCart } from "../../features/slices/CartSlice";
