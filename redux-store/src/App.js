@@ -4,6 +4,7 @@ import "./App.css";
 import Main from "./components/main/Main";
 import FilteredProducts from "./components/filteredProducts/FilteredProducts";
 import SingleProduct from "./components/filteredProducts/SingleProduct";
+import Login from "./components/login/Login";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path='/login' element={< Login/>} />
           <Route
             path="/filtered-products/:type"
             element={<FilteredProducts />}
