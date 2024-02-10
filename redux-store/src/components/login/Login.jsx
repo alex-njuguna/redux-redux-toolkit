@@ -8,8 +8,14 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { login } from "../../features/slices/AuthSlice";
+
 
 export default function Login() {
+const dispatch = useDispatch()
+
   const initialState = {
     name: "",
     password: "",
@@ -36,12 +42,12 @@ export default function Login() {
           </Typography>
         </CardHeader>
         <CardBody className="flex flex-col gap-4">
-          <Input label="Email" size="lg" type="text" name="nane" value={values.name} onChange={onChange} />
+          <Input label="Name" size="lg" type="text" name="name" value={values.name} onChange={onChange} />
           <Input label="Password" size="lg" type="password" name="password" value={values.password} onChange={onChange}/>
           <Input label="Image URL Address" size="lg" type="text" name="image" value={values.image} onChange={onChange}/>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button variant="gradient" fullWidth>
+          <Button variant="gradient" fullWidth onClick={() => dispatch(login(values))}>
             Sign In
           </Button>
           <Typography variant="small" className="mt-6 flex justify-center">

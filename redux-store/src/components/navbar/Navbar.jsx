@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import logo from "../../assets/images/logo.png";
 import Cart from "../cart/Cart";
+
 
 export default function Navbar() {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
