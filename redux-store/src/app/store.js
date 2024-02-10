@@ -9,6 +9,6 @@ export const store = configureStore({
     slider: sliderReducer,
     products: productsReducer,
     cart: cartReducer,
-    user: authReducer
+    auth: authReducer,
   },
 });

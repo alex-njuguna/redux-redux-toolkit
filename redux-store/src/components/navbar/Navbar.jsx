@@ -3,12 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 
 import logo from "../../assets/images/logo.png";
 import Cart from "../cart/Cart";
-
+import { logout } from "../../features/slices/AuthSlice";
 
 export default function Navbar() {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
+
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -22,7 +24,7 @@ export default function Navbar() {
           <img src={logo} alt="store" className="h-28 w-full" />
         </div>
         <div className="flex flex-row items-center">
-          <button className="text-xl font-bold tracking-normal leading-none text-center mr-4">
+          <button className="text-xl font-bold tracking-normal leading-none text-center mr-4" onClick={() => dispatch(logout())}>
             Logout
           </button>
           <div className="flex flex-row items-center mr-2">

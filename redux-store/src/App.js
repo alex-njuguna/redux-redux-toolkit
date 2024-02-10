@@ -8,7 +8,7 @@ import SingleProduct from "./components/filteredProducts/SingleProduct";
 import Login from "./components/login/Login";
 
 export default function App() {
-  const user = useSelector((state) => state.user.user);
+  const user = useSelector((state) => state.auth.user);
   const {authUser} = user
   console.log('user', user)
   console.log('authUser', authUser)

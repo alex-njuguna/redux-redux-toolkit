@@ -14,21 +14,11 @@ import { login } from "../../features/slices/AuthSlice";
 
 
 export default function Login() {
-const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
-  const initialState = {
-    name: "",
-    password: "",
-    image: "",
-  };
+    const [name, setName] = useState('')
+    const [password, setPassword] = useState('')
 
-  const [values, setValues] = useState(initialState)
-
-  const onChange = (e) => {
-    const {name, value} = e.target
-    setValues({...values, [name]: value})
-  }
- 
   return (
     <div className="grid grid-cols-1 items-center justify-items-center h-screen">
       <Card className="w-96">
@@ -42,17 +32,13 @@ const dispatch = useDispatch()
           </Typography>
         </CardHeader>
         <CardBody className="flex flex-col gap-4">
-          <Input label="Name" size="lg" type="text" name="name" value={values.name} onChange={onChange} />
-          <Input label="Password" size="lg" type="password" name="password" value={values.password} onChange={onChange}/>
-          <Input label="Image URL Address" size="lg" type="text" name="image" value={values.image} onChange={onChange}/>
+          <Input label="Name" size="lg" type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+          <Input label="Password" size="lg" type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button variant="gradient" fullWidth onClick={() => dispatch(login(values))}>
+          <Button variant="gradient" fullWidth onClick={() => dispatch(login({name: name, password: password }))}>
             Sign In
           </Button>
-          <Typography variant="small" className="mt-6 flex justify-center">
-            Image is optional
-          </Typography>
         </CardFooter>
       </Card>
     </div>
