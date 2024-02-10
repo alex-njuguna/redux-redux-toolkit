@@ -16,7 +16,7 @@ export default function Navbar() {
     <>
       <div className="bg-black p-2 w-full">
         <h3 className="text-white font-bold text-center text-2xl leading-none tracking-none">
-          Welcome All
+          Redux Store
         </h3>
       </div>
       <div className="flex justify-around items-center">
